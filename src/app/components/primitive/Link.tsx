@@ -1,5 +1,11 @@
 import React, { PropsWithChildren } from 'react'
-import { LinkProps } from '@/types/primitive.types';
+
+interface LinkProps {
+  href: string;
+  extraClass?: string;
+  target?: string;
+  rel?: string;
+};
 
 const Link = ({
   href,

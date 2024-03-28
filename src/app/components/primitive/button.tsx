@@ -1,14 +1,32 @@
-import { ButtonProps } from "@/types/primitive.types";
+import { MouseEventHandler } from "react";
+
+interface ButtonProps {
+  children: React.ReactNode;
+  onChange: MouseEventHandler<HTMLButtonElement>;
+  disabled?: boolean;
+  extraClass?: string;
+  isSubmit?: boolean;
+}
 
 const Button = ({
-    text,
-    type = "button",
-    disabled = false,
-    extraClass,
+  onChange,
+  children,
+  disabled = false,
+  extraClass,
+  isSubmit,
 }: ButtonProps) => {
   return (
-    <button type={type} disabled={disabled} className="text-black py-1.5 px-4 rounded shadow-lg bg-cyan-400">{text}</button>
-  )
+    <button
+      type={isSubmit ? "button" : "submit"}
+      disabled={disabled}
+      className={`text-black py-1.5 px-4 rounded ${
+        extraClass && extraClass
+      }`}
+      onClick={onChange}
+    >
+      {children}
+    </button>
+  );
 };
 
 export default Button;

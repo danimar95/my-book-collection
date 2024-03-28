@@ -1,4 +1,15 @@
-import { SelectProps } from "@/types/primitive.types";
+import { Author } from "@/types/data.type";
+
+interface SelectProps {
+  htmlFor: string;
+  label: string;
+  name: string;
+  disabled?: boolean;
+  required?: boolean;
+  placeholder: string;
+  options: Author[];
+  extraClass?: string;
+}
 
 const Select = ({
   htmlFor,
@@ -11,13 +22,13 @@ const Select = ({
   extraClass,
 }: SelectProps) => {
   return (
-    <label className="flex text-black border border-black rounded-md px-4 py-0.5" htmlFor={htmlFor} data-testid="select-label">
+    <label className="flex text-black rounded-3xl py-0.5 w-full" htmlFor={htmlFor} data-testid="select-label">
       <span className="" data-testid="select-caption">
         {label && <span className="">{label}</span>}
       </span>
       <span className="w-full" data-testid="select-wrapper">
         <select
-          className={`text-black p-2 rounded-md ${extraClass ? extraClass : ""}`}
+          className={`text-black p-2 rounded-3xl ${extraClass ? extraClass : ""}`}
           name={name}
           id={htmlFor}
           disabled={disabled}

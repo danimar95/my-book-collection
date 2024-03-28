@@ -1,6 +1,6 @@
-import Select from "../components/primitive/select";
-import Input from "../components/primitive/input";
-import Button from "../components/primitive/button";
+import Select from "../components/primitive/Select";
+import Input from "../components/primitive/Input";
+import Button from "../components/primitive/Button";
 import DetailLayout from "../components/layout/DetailLayout";
 
 const genresDummy = [
@@ -10,32 +10,45 @@ const genresDummy = [
 
 const BookForm = () => (
   <DetailLayout>
-    <div className="flex h-full items-center justify-start flex-col px-16 py-4">
-      <div className="w-full flex flex-col item-center justify-center w-9/12">
-        <div className="flex justify-around p-2 items-start">
+    <div className="flex h-full items-center justify-start flex-col p-10">
+      <div className="w-full flex flex-col item-center justify-center">
+        <div className="w-full flex p-2 items-start">
           <span className="text-black w-3/12">Genre</span>
-          <div className="w-9/12">
-            <Select
-              htmlFor="search-bar"
-              label=""
-              name="author"
-              placeholder="Genre"
-              options={genresDummy}
-              extraClass="w-full"
-            />
-          </div>
+          <Select
+            htmlFor="search-bar"
+            label=""
+            name="author"
+            placeholder="Genre"
+            options={genresDummy}
+            extraClass="w-full shadow px-6"
+          />
         </div>
         <div className="flex justify-around p-2 items-center">
           <span className="text-black w-3/12">Book's name</span>
-          <Input id="name" searchTerm="" placeholder="" extraClass="w-9/12" />
+          <Input
+            id="name"
+            searchTerm=""
+            placeholder=""
+            extraClass="w-9/12 shadow"
+          />
         </div>
         <div className="flex justify-around p-2 items-center">
           <span className="text-black w-3/12">URL image</span>
-          <Input id="name" searchTerm="" placeholder="" extraClass="w-9/12" />
+          <Input
+            id="name"
+            searchTerm=""
+            placeholder=""
+            extraClass="w-9/12 shadow"
+          />
         </div>
         <div className="flex justify-around p-2 items-center">
           <span className="text-black w-3/12">Publish year</span>
-          <Input id="name" searchTerm="" placeholder="" extraClass="w-9/12" />
+          <Input
+            id="name"
+            searchTerm=""
+            placeholder=""
+            extraClass="w-9/12 shadow"
+          />
         </div>
         <div className="flex justify-around p-2 items-center">
           <span className="text-black w-3/12">Description</span>
@@ -43,7 +56,7 @@ const BookForm = () => (
             rows={4}
             id="description"
             name="description"
-            className="w-9/12 border border-black rounded"
+            className="w-full shadow rounded-xl"
           ></textarea>
         </div>
       </div>

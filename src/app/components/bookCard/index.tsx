@@ -1,4 +1,5 @@
 import { BookCardProps } from "@/types/home.type";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const BookCard = ({id, image}: BookCardProps) => {
@@ -8,9 +9,9 @@ const BookCard = ({id, image}: BookCardProps) => {
   };
 
   return (
-    <div className="rounded-md text-black w-32 h-44 rounded-md border border-black m-4 cursor-pointer" onClick={handleClick}>
+    <Link href="/book-detail" className="rounded-md text-black w-32 h-44 border border-black m-4" onClick={handleClick}>
       <img src={image} alt="cover" />
-    </div>
+    </Link>
   );
 };
 

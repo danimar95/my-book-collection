@@ -1,6 +1,6 @@
-import Select from "../components/primitive/select";
-import Input from "../components/primitive/input";
-import Button from "../components/primitive/button";
+import Select from "../components/primitive/Select";
+import Input from "../components/primitive/Input";
+import Button from "../components/primitive/Button";
 import DetailLayout from "../components/layout/DetailLayout";
 
 const authorsDummy = [

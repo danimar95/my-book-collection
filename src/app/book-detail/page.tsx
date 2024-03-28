@@ -1,8 +1,10 @@
+"use client";
+import Link from "next/link";
+import Router from 'next/router';
 import DetailLayout from "../components/layout/DetailLayout";
-import Link from "../components/primitive/Link";
 
 const BookDetail = () => (
-  <DetailLayout isDetail>
+  <DetailLayout isDetail isBook>
     <div className="text-black py-8">
       <div className="flex p-10 flex-col">
         <div className="flex">
@@ -36,7 +38,7 @@ const BookDetail = () => (
           </div>
         </div>
         <div className="flex justify-end">
-          <Link href="www.google.com" extraClass="pl-4">
+          <Link href="author-detail" className="pl-4">
             View Gabriel Garcia Marquez's detail
           </Link>
         </div>
