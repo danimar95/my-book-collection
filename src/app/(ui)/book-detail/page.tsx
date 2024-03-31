@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Router from 'next/router';
-import DetailLayout from "../components/layout/DetailLayout";
+import DetailLayout from "../_components/layout/DetailLayout";
 
 const BookDetail = () => (
   <DetailLayout isDetail isBook>

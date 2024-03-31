@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
-import DetailLayout from "../components/layout/DetailLayout";
-import Button from "../components/primitive/Button";
+import DetailLayout from "../_components/layout/DetailLayout";
+import Button from "../_components/primitive/Button";
 
 const AuthorDetail = () => {
   return (

@@ -1,10 +1,13 @@
 "use client";
 import { useState } from "react";
-import Select from "./components/primitive/select";
-import BookCard from "./components/bookCard";
-import Input from "./components/primitive/Input";
+import Select from "./(ui)/_components/primitive/Select";
+import BookCard from "./(ui)/_components/bookCard";
+import Input from "./(ui)/_components/primitive/Input";
+import Button from "./(ui)/_components/primitive/Button";
+import Link from "next/link";
+import { getAuthors } from "./api/authors/create/route";
 
-export default function Home() {
+const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -71,10 +74,14 @@ export default function Home() {
         </div>
       </div>
       <div className="mt-14">
-        <span className="text-black">Results</span>
+        <div className="flex justify-between">
+          <span>Results</span>
+          <Link href="author-form">+ Add Author</Link>
+        </div>
         <div className="flex flex-wrap gap-0.5 overflow-auto max-h-80 mt-4">
-          {booksDummy.map((book) => (
+          {booksDummy.map((book, index) => (
             <BookCard
+              key={`${book.id}-${index}`}
               id={book.id}
               image={`https://picsum.photos/id/${Math.floor(
                 Math.random() * 100
@@ -85,4 +92,6 @@ export default function Home() {
       </div>
     </main>
   );
-}
+};
+
+export default Home;

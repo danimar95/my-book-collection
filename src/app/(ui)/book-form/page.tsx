@@ -1,7 +1,8 @@
-import Select from "../components/primitive/Select";
-import Input from "../components/primitive/Input";
-import Button from "../components/primitive/Button";
-import DetailLayout from "../components/layout/DetailLayout";
+"use client";
+import Select from "../_components/primitive/Select";
+import Input from "../_components/primitive/Input";
+import Button from "../_components/primitive/Button";
+import DetailLayout from "../_components/layout/DetailLayout";
 
 const genresDummy = [
   { id: 1, value: "Comedy" },
@@ -61,7 +62,7 @@ const BookForm = () => (
         </div>
       </div>
       <div className="flex pr-2 w-full justify-end pt-8">
-        <Button text="Add / Edit Book" />
+        <Button extraClass="text-black" onChange={() => console.log("")}>Add / Edit Book</Button>
       </div>
     </div>
   </DetailLayout>
